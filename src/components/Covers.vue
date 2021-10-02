@@ -1,22 +1,14 @@
 <template>
-    <div class="wrapper">  
-        <div class="covers_box">
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-            <Canvas/>
-        </div>
-    </div>   
+ 
+    <div class="covers_box">
+        <Canvas :api="covers" :index="index" v-for="(album, index) in covers" :key="index"/>
+    </div>
+     
 </template>
 
 <script>
 import Canvas from "./Canvas.vue";
+import axios from "axios";
 
 export default {
 
@@ -24,8 +16,18 @@ export default {
     components:{
         Canvas
     },
-  
+    data(){
+        return{
+            covers: []
+        }
+    },
 
+    created(){
+        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+        .then((response) =>{
+            this.covers = response.data.response;
+        });   
+    }
 }
 </script>
 
@@ -34,32 +36,11 @@ export default {
 <style lang='scss'>
 @import "../assets/style/variables.scss";
 
-
-
-.wrapper{
+.covers_box{
+    max-width: 71.875rem;
+    margin: auto;
     display: flex;
-    align-content: center;
-    height: 100%;
-
-    .covers_box{
-        width: 70%;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
 }
-}
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
 
 </style>

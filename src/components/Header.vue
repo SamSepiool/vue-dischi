@@ -9,7 +9,7 @@
 <script>
 export default {
     name: 'Header',
-
+    
 }
 </script>
 
@@ -17,7 +17,7 @@ export default {
 @import "../assets/style/variables.scss";
 
 header{
-    height: 4.375rem;
+    max-height: 4.375rem;
     background-color: $header;
     padding: .625rem;
 
@@ -28,9 +28,6 @@ header{
             width: 100%;
         }
     }
-
 }
-
-
 
 </style>

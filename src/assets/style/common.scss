@@ -1,4 +1,6 @@
 @import "./variables.scss";
+// GOOGLE-FONT
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 // GENERAL/RESET
 *{
@@ -10,16 +12,15 @@
 body{
     height: 100vh;
     background-color: $body;
-    // border: 2px solid red;
+    font-family: 'Roboto', sans-serif;
 
     #app{
-        border: 3px solid blue;
         height: 100%;
     }
 
     main{
+        display: flex;
         height: calc(100% - 4.375rem);
-        // border: 4px solid yellow;
     }
 
 

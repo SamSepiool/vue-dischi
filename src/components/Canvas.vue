@@ -1,12 +1,11 @@
 <template>
     
     <div class="canvas">
-        <img src="../assets/img/spotify-logo.png" alt="">
-        
+        <img :src="api[index].poster" :alt="api[index].title">
         <div class="info">
-            <h2>SONG</h2>
-            <p>ARTIST</p>
-            <p>YEAR</p>
+            <h2>{{api[index].title}}</h2>
+            <p>{{api[index].author}}</p>
+            <p>{{api[index].year}}</p>
         </div>
     </div>
 
@@ -17,39 +16,39 @@
 <script>
 export default {
     name: 'Canvas',
-
+    props:{
+        api: Array,
+        index: Number
+    },
 }
 </script>
+
 
 
 <style lang="scss">
 @import "../assets/style/variables.scss";
 
 .canvas{
-    width: calc(100% / 5 - 1.25rem);
-    margin: .3125rem .625rem;
-    min-height: 18.75rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    width: calc(100% / 5 - 2.5rem );
+    min-height: 22.5rem;
+    margin: .625rem 1.25rem;
+    padding: 1.25rem 1.125rem;
     text-align: center;
     background-color: $header;
     overflow: hidden;
 
     & img{
         width: 100%;
-        max-width: 9.375rem;
-        
     }
 
     .info{
+        color:$gray;
+
         h2{
-            margin-bottom: 1.25rem;
+            margin: 1.25rem 0;
             color:$white;
-        }
-        p{
-            color: gray;
+            text-transform: uppercase;
+            font-size: 1.25rem;
         }
     }
 }
