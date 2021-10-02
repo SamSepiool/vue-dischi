@@ -1,7 +1,7 @@
 <template>
    <header>
        <div class="logo">
-           <img src="" alt="">
+           <img src="../assets/img/spotify-logo.png" alt="">
        </div>
    </header>
 </template>
@@ -13,6 +13,23 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
+@import "./style/variables.scss";
+
+header{
+    background-color: $header;
+    padding: .625rem;
+
+    .logo{
+        max-width: 3.75rem;
+
+        img{
+            width: 100%;
+        }
+    }
+
+}
+
+
 
 </style>

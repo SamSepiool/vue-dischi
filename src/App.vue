@@ -22,5 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./components/style/common.scss" ;
+
 
 </style>
