@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <Header/>
-    <Covers/>
-    
+    <main>
+      <Covers/>
+    </main>
   </div>
 </template>
 
@@ -22,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./components/style/common.scss" ;
+@import "./assets/style/common.scss" ;
 
 
 </style>

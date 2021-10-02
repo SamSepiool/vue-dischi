@@ -14,9 +14,10 @@ export default {
 </script>
 
 <style lang='scss'>
-@import "./style/variables.scss";
+@import "../assets/style/variables.scss";
 
 header{
+    height: 4.375rem;
     background-color: $header;
     padding: .625rem;
 

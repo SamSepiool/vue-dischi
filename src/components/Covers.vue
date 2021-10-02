@@ -1,7 +1,18 @@
 <template>
-    <div class="covers_box">
-        <Canvas/>
-    </div>
+    <div class="wrapper">  
+        <div class="covers_box">
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+            <Canvas/>
+        </div>
+    </div>   
 </template>
 
 <script>
@@ -12,12 +23,43 @@ export default {
     name: 'Covers',
     components:{
         Canvas
-    }
+    },
+  
 
 }
 </script>
 
-<style>
+
+
+<style lang='scss'>
 @import "../assets/style/variables.scss";
+
+
+
+.wrapper{
+    display: flex;
+    align-content: center;
+    height: 100%;
+
+    .covers_box{
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+}
+}
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
 
 </style>
