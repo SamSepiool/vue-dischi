@@ -1,11 +1,11 @@
 <template>
     
     <div class="canvas">
-        <img :src="api[index].poster" :alt="api[index].title">
+        <img :src="api.poster" :alt="api.title">
         <div class="info">
-            <h2>{{api[index].title}}</h2>
-            <p>{{api[index].author}}</p>
-            <p>{{api[index].year}}</p>
+            <h2>{{api.title}}</h2>
+            <p>{{api.author}}</p>
+            <p>{{api.year}}</p>
         </div>
     </div>
 
@@ -17,8 +17,7 @@
 export default {
     name: 'Canvas',
     props:{
-        api: Array,
-        index: Number
+        api: Object
     },
 }
 </script>

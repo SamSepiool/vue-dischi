@@ -1,7 +1,7 @@
 <template>
  
     <div class="covers_box">
-        <Canvas :api="covers" :index="index" v-for="(album, index) in covers" :key="index"/>
+        <Canvas :api="album" v-for="(album, index) in covers" :key="index"/>
     </div>
      
 </template>
