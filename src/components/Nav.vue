@@ -1,11 +1,9 @@
 <template>
     <nav>
         <select name="genres" v-model="genreSelected" @change="$emit('changedGenre', genreSelected)">
-            <option value=""></option>
-            <option value="rock">ROCK</option>
-            <option value="pop">POP</option>
-            <option value="metal">METAL</option>
-            <option value="jazz">JAZZ</option>
+            <option value="">All genres</option>
+            <option v-for="(genre,index) in genresList" :key="index">{{genre}}</option>
+
         </select>  
     </nav>
   
@@ -14,7 +12,9 @@
 <script>
 export default {
     name: "Nav",
-    emits: '',
+    props:{
+    genresList: Array,
+    },
     data(){
         return{
             genreSelected: ''
