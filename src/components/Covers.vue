@@ -42,6 +42,8 @@ export default {
           // (!this.genres.includes(elm.genre)) ?  this.genres.push(elm.genre) : null
           // (!this.authors.includes(elm.author)) ? this.authors.push(elm.author) : null
         });
+        this.genres.push('');
+        // this.authors.push('all authors')
         this.$emit('genresList', this.genres);
         this.$emit('authorsList', this.authors);
       });
@@ -53,7 +55,7 @@ export default {
         if (this.genre != "") {
           return elm.genre.toLowerCase().includes(this.genre.toLowerCase());
         }
-        if (this.genre == "") {
+        if (this.genre == '') {
           return this.covers;
         }
       });

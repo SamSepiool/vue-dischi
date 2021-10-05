@@ -6,6 +6,7 @@
 
     <Nav
       @changedGenre="passValue"
+      @changedAuthor='passValue'
       :on="$emit('choosenGenre', choosenGenre)"
       :genresList="genresList"
       :authorsList="authorsList"
@@ -28,13 +29,22 @@ export default {
   },
   data() {
     return {
-      choosenGenre: "",
+      choosenGenre: '',
+      choosenAuthor: ''
     };
   },
   methods: {
     passValue(selectValue) {
-      this.choosenGenre = selectValue;
+      if (this.genresList.includes(selectValue)) {
+        this.choosenGenre = selectValue;
+      }
+      if (this.authorsList.includes(selectValue)) {
+        this.choosenAuthor = selectValue;
+      }
+    
+      
     },
+    
   },
 };
 </script>
