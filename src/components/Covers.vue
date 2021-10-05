@@ -1,10 +1,6 @@
 <template>
   <div class="covers_box">
-    <Canvas
-      :api="album"
-      v-for="(album, index) in filteredBy"
-      :key="index"
-    />
+    <Canvas :api="album" v-for="(album, index) in filteredBy" :key="index" />
   </div>
 </template>
 
@@ -13,8 +9,9 @@ import Canvas from "./Canvas.vue";
 import axios from "axios";
 export default {
   name: "Covers",
-  props:{
-      genre: String
+  props: {
+    genre: String,
+    author: String
   },
   components: {
     Canvas,
@@ -39,25 +36,28 @@ export default {
           if (!this.authors.includes(elm.author)) {
             this.authors.push(elm.author);
           }
-          // (!this.genres.includes(elm.genre)) ?  this.genres.push(elm.genre) : null
-          // (!this.authors.includes(elm.author)) ? this.authors.push(elm.author) : null
         });
-        this.genres.push('');
-        // this.authors.push('all authors')
-        this.$emit('genresList', this.genres);
-        this.$emit('authorsList', this.authors);
+        this.genres.push("");
+        this.authors.push("");
+        this.$emit("genresList", this.genres);
+        this.$emit("authorsList", this.authors);
       });
   },
 
   computed: {
     filteredBy() {
       const coversFiltered = this.covers.filter((elm) => {
-        if (this.genre != "") {
-          return elm.genre.toLowerCase().includes(this.genre.toLowerCase());
+
+
+        elm.genre = elm.genre.toLowerCase();
+        elm.author = elm.author.toLowerCase();
+
+        if(elm.genre.includes(this.genre.toLowerCase()) || this.genre.toLowerCase() == 'all genres'){
+          return true;
+
         }
-        if (this.genre == '') {
-          return this.covers;
-        }
+       
+        return false
       });
       return coversFiltered;
     },
