@@ -8,6 +8,7 @@
       @changedGenre="passValue"
       :on="$emit('choosenGenre', choosenGenre)"
       :genresList="genresList"
+      :authorsList="authorsList"
     />
   </header>
 </template>
@@ -19,6 +20,7 @@ export default {
     name: "Header",
     props:{
      genresList: Array,
+     authorsList: Array
   },
 
   components: {

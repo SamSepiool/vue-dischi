@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header @choosenGenre="passValue" :genresList='genresList'/>
+    <Header @choosenGenre="passValue" :genresList='genresList' :authorsList='authorsList'/>
     <main>
-      <Covers :genre='genre' @genresList='passList' />
+      <Covers :genre='genre' @genresList='passList' @authorsList='passAuthors' />
     </main>
   </div>
 </template>
@@ -21,6 +21,7 @@ export default {
     return {
       genre: "",
       genresList: [],
+      authorsList: []
     };
   },
   methods: {
@@ -30,6 +31,9 @@ export default {
     },
     passList(list) {
       this.genresList = list;
+    },
+    passAuthors(list) {
+    this.authorsList = list;
     }
 
 

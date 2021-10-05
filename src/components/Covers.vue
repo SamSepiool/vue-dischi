@@ -43,8 +43,7 @@ export default {
           // (!this.authors.includes(elm.author)) ? this.authors.push(elm.author) : null
         });
         this.$emit('genresList', this.genres);
-        console.log(this.authors);
-        console.log(this.genres);
+        this.$emit('authorsList', this.authors);
       });
   },
 
